@@ -15,7 +15,6 @@ import { Input } from '@/components/ui/input';
 
 interface AuthFormProps {
   className?: string;
-  change: ()=>void
 }
 
 const formSchema = z.object({
@@ -44,14 +43,7 @@ const AuthForm = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       console.log('Form values:', values);
-      // Пример API запроса:
-      // const response = await fetch('/api/auth/login', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(values),
-      // });
-
-      // if (!response.ok) throw new Error('Login failed');
+      // API запрос:
 
       form.reset();
       alert('Login successful!');

@@ -33,7 +33,7 @@ const formSchema = z
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords don't match",
-    path: ['confirmPassword'], // Указываем какое поле подсветить при ошибке
+    path: ['confirmPassword'],
   });
 
 const RegForm = () => {
@@ -50,14 +50,7 @@ const RegForm = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       console.log('Form values:', values);
-      // Пример API запроса:
-      // const response = await fetch('/api/auth/login', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(values),
-      // });
-
-      // if (!response.ok) throw new Error('Login failed');
+      // API запрос
 
       form.reset();
       alert('Login successful!');
